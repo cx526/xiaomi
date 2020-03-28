@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/class/class",
+    "pages/my/my",
+    "pages/cart/cart",
+    "components/common/line/line"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "仿小米商城",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#B9B9B9",
+    "selectedColor": "#E57228",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "static/tabbar/index.png",
+        "selectedIconPath": "static/tabbar/indexSelected.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "static/tabbar/class.png",
+        "selectedIconPath": "static/tabbar/classSelected.png",
+        "pagePath": "pages/class/class",
+        "text": "分类"
+      },
+      {
+        "iconPath": "static/tabbar/cart.png",
+        "selectedIconPath": "static/tabbar/cartSelected.png",
+        "pagePath": "pages/cart/cart",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "static/tabbar/my.png",
+        "selectedIconPath": "static/tabbar/mySelected.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"line { height: ",[0,18],"; background: #F8F9FB; }\n",],undefined,{path:"./components/common/line/line.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./components/common/line/line.wxml') } }));
