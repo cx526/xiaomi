@@ -1,0 +1,63 @@
+<template>
+	<div style="width: 750px;height: 75px;flex-direction: row;">
+		<scroller show-scrollbar="false" scroll-direction="horizontal"
+		style="height: 75px;height: 75px;flex-direction: row;">
+			<div 
+			style="width: 140px;height: 75px;display: inline-block;align-items: center;"
+			v-for="(item,index) in tabList" :key="index"
+			@click="changeTab(index)"
+			:ref='`tab${index}`'>
+				<text 
+				style="font-size: 28px;line-height: 75px;height: 75px;"
+				:class="[tabIndex == index ? 'active': '']">{{item.name}}</text>
+			</div>
+		</scroller>
+	</div>
+</template>
+
+<script>
+	const dom = weex.requireModule('dom')
+	export default {
+		props: {
+			tabIndex: Number,
+			tabList: Array
+		},
+		data() {
+			return {}
+		},
+		methods:{
+			changeTab(index) {
+				// 分发事件
+				this.$emit('handleTabBar',index);
+				// 当前点击的元素
+				let el = this.$refs[`tab${index}`][0];
+				// 获取当前点击元素的外框属性;
+				dom.getComponentRect(el,(res)=> {
+					// 右边
+					if(res.size.right > 750) {
+						let newEle = this.$refs[`tab${index - 4}`][0];
+						return dom.scrollToElement(newEle,{})
+					}
+					if(res.size.left < 0) {
+						return dom.scrollToElement(el,{})
+					}
+				})
+			},
+		},
+		// 监听tabIndex的改变;
+		watch:{
+			tabIndex(newVal,oldVal) {
+				this.changeTab(newVal)
+			}
+		},
+	}
+</script>
+
+<style scoped>
+	.active {
+		color: #DD5A0B;
+		border-bottom-width: 4px;
+		border-style: solid;
+		border-color: #DD5A0B;
+	}
+</style>

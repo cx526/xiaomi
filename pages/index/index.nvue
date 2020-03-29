@@ -1,59 +1,212 @@
 <template>
 	<div>
-		<div style="height: 300px;border-color: #0077AA;margin-bottom: 40px;border-width: 1px;border-style: solid;flex-direction: row">
-			<div style="width: 375px;padding: 20px;border-color: #09BB07;border-width: 1px;border-style: dashed;">
-				<text>AAAA</text>
-			</div>
-			<div style="width: 375px;border-color: #FFB400;border-width: 1px;border-style: dashed;">
-				<text>BBB</text>
-			</div>
-		</div>
-		<list>
-			<cell v-for="(num,index) in lists" class="cell" :key="index" @click="emit(num)">
-				<text>{{num}}</text>
-			</cell>
-			<loading @loading="loading" :display="isShow">
-					<text style="text-align: center;color: #0086B3;width: 750px;">数据加载中</text>
-				
-			</loading>
-		</list>
+		<!-- nav组件 -->
+		<nTabBar :tabList="tabList" :tabIndex="tabIndex"
+		@handleTabBar="handleTabBar"></nTabBar>
+		<slider :index="tabIndex" style="flex: 1;"
+		@change="handleChange">
+			<list>
+				<cell>
+					<!-- 轮播图组件 -->
+					<nSwiper :swiperUrl="swiperUrl"></nSwiper>
+					<!-- 图标分类组件 -->
+					<nList :navList="navList"></nList>
+					<!-- 分隔线组件 -->
+					<nLine></nLine>
+					<!-- 三图广告位组件 -->
+					<nAdvThree :threeAdv="threeAdv"></nAdvThree>
+					<!-- 小卡片组件 -->
+					<nCard title="每日精选" bodyImg="/static/images/demo/demo4.jpg"></nCard>
+					<!-- 产品列表 -->
+					<nProductList :productList="productList"></nProductList>
+				</cell>
+				<!-- 上拉加载 -->
+				<loading :display="loadingStatus" @loading="onLoading">
+					<div style="flex-direction: row;align-items: center;justify-content: center;width: 750px;height: 40px;">
+						<text style="height: 40px;line-height: 40px;">Loading...</text>
+					</div>
+					
+				</loading>
+			</list>
+		</slider>
 	</div>
 </template>
 
 <script>
+	import nSwiper from '@/components/nvue/nswiper.nvue'
+	import nList from '@/components/nvue/nlist.nvue'
+	import nLine from '@/components/nvue/nline.nvue'
+	import nAdvThree from '@/components/nvue/nadvThree.nvue'
+	import nCard from '@/components/nvue/ncard.nvue'
+	import nProductList from '@/components/nvue/nproductlist.nvue'
+	import nTabBar from '@/components/nvue/ntabbar.nvue'
+	const demo = 
+		{
+			cover: '/static/images/demo/list/5.jpg',
+			title: '米家空调',
+			desc: '1.5匹直流变频',
+			newPrice: 2100,
+			oldPrice: 2999
+		}
 	export default {
 		data () {
 			return {
-				isShow: 'hide',
-				lists: ['A', 'B', 'C', 'D', 'E'],
-				
+				tabIndex: 0,
+				// 下拉加载的状态
+				loadingStatus: 'hide',
+				swiperUrl: [
+					{
+						src: '/static/images/demo/demo4.jpg'
+					},
+					{
+						src: '/static/images/demo/demo4.jpg'
+					},
+					{
+						src: '/static/images/demo/demo4.jpg'
+					}
+				],
+				navList: [
+					{
+						src: '/static/images/indexnav/1.png',
+						text: '新品发布'
+					},
+					{
+						src: '/static/images/indexnav/2.gif',
+						text: '小米众筹'
+					},
+					{
+						src: '/static/images/indexnav/3.gif',
+						text: '以旧换新'
+					},
+					{
+						src: '/static/images/indexnav/4.gif',
+						text: '1分拼团'
+					},
+					{
+						src: '/static/images/indexnav/5.gif',
+						text: '超级特卖'
+					},
+					{
+						src: '/static/images/indexnav/6.gif',
+						text: '小米秒杀'
+					},
+					{
+						src: '/static/images/indexnav/7.gif',
+						text: '真心想要'
+					},
+					{
+						src: '/static/images/indexnav/8.gif',
+						text: '电视热卖'
+					},
+					{
+						src: '/static/images/indexnav/9.gif',
+						text: '家电热卖'
+					},
+					{
+						src: '/static/images/indexnav/10.gif',
+						text: '米粉卡'
+					}
+				],
+				threeAdv: {
+					big: {
+						src: '/static/images/demo/demo1.jpg'
+					},
+					smallTop: {
+						src: '/static/images/demo/demo2.jpg'
+					},
+					smallBottom: {
+						src: '/static/images/demo/demo2.jpg'
+					}
+				},
+				productList: [
+					{
+						cover: '/static/images/demo/list/5.jpg',
+						title: '米家空调',
+						desc: '1.5匹直流变频',
+						newPrice: 2100,
+						oldPrice: 2999
+					},
+					{
+						cover: '/static/images/demo/list/5.jpg',
+						title: '米家空调',
+						desc: '1.5匹直流变频',
+						newPrice: 2100,
+						oldPrice: 2999
+					},
+					{
+						cover: '/static/images/demo/list/5.jpg',
+						title: '米家空调',
+						desc: '1.5匹直流变频',
+						newPrice: 2100,
+						oldPrice: 2999
+					},
+					{
+						cover: '/static/images/demo/list/5.jpg',
+						title: '米家空调',
+						desc: '1.5匹直流变频1.5匹直流变频1.5匹直流变频1.5匹直流变频1.5匹直流变频1.5匹直流变频',
+						newPrice: 2100,
+						oldPrice: 2999
+					}
+				],
+				tabList: [
+					{
+						name: '推荐'
+					},
+					{
+						name: '体育'
+					},
+					{
+						name: '热点'
+					},
+					{
+						name: '财经'
+					},
+					{
+						name: '娱乐'
+					},
+					{
+						name: '军事'
+					},
+					{
+						name: '历史'
+					},
+					{
+						name: '本地'
+					}
+				],
 			}
 		},
-		methods: {
-			loading() {
-				this.isShow = 'show';
-				setTimeout(()=> {
-					this.isShow = 'hide';
-					this.lists = [...this.lists,...['a','b']];
+		components:{
+			nSwiper,
+			nList,
+			nLine,
+			nAdvThree,
+			nCard,
+			nProductList,
+			nTabBar
+		},
+		
+		methods:{
+			handleTabBar(index) {
+				this.tabIndex = index
+			},
+			handleChange(event) {
+				this.tabIndex = event.index
+			},
+			// 上拉加载
+			onLoading() {
+				this.loadingStatus="show",
+				setTimeout(() => {
+					this.productList = [...this.productList,demo]
+					this.loadingStatus = 'hide'
 				},2000)
 			},
-			emit(num) {
-				uni.$emit('index',num)
-			},
-		},
+		}
+		
 	
 	}
 </script>
 
 <style>
-	.cell {
-		height: 300px;
-		border-width: 1px;
-		border-style: solid;
-		border-color: #09BB07;
-		margin-bottom: 40px;
-		justify-content: center;
-		flex-direction: row;
-		align-items: center;
-	}
+
 </style>

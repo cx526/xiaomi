@@ -1,0 +1,78 @@
+<template>
+<div class="product">
+	<block v-for="(item,index) in productList" :key="index">
+		<div class="product-item">
+			<div class="product-img">
+				<image :src="item.cover" class="image"></image>
+			</div>
+			<div class="product-context">
+				<text class="title">{{item.title}}</text>
+				<text class="des">{{item.desc}}</text>
+				<div class="price">
+					<div class="newPrice">
+						<text style="color: #D9712C;font-size: 15px;">￥</text>
+						<text style="color: #D9712C;font-size: 25px;">{{item.newPrice}}</text>
+						<text class="oldPrice">￥{{item.oldPrice}}</text>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</block>
+	
+	</div>
+</template>
+
+<script>
+	export default {
+		props:{
+			productList: Array
+		}
+	}
+</script>
+
+<style scoped>
+.product {
+	width: 750px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 4px;
+}
+.product-item {
+	width: 373px;
+}
+.product-img {
+	width: 373px;
+	height: 370px;
+}
+.image {
+	width: 373px;
+	height: 370px;
+}
+.product-context {
+	padding-left: 20px;
+	padding-top: 24px;
+	padding-bottom: 28px;
+}
+.title {
+	font-size: 28px;
+	lines: 1;
+}
+.des {
+	margin-top: 14px;
+	font-size: 22px;
+	color: #bababa;
+	lines: 1;
+}
+.newPrice {
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-top: 18px;
+}
+.oldPrice {
+	color: #B6B6B6;
+	font-size: 18px;
+	margin-left: 22px;
+	text-decoration: line-through;
+}
+</style>
