@@ -1520,28 +1520,21 @@ var lOD=_mz(z,'list',['bind:__l',46,'productList',1,'vueId',2],[],tCD,aBD,gg)
 _(oND,lOD)
 }
 oND.wxXCkey=1
-oND.wxXCkey=3
 }
 hKD.wxXCkey=1
-hKD.wxXCkey=3
-hKD.wxXCkey=3
 }
 oHD.wxXCkey=1
-oHD.wxXCkey=3
-oHD.wxXCkey=3
 }
 oFD.wxXCkey=1
-oFD.wxXCkey=3
-oFD.wxXCkey=3
 return eDD
 }
-o0C.wxXCkey=4
+o0C.wxXCkey=2
 _2z(z,27,lAD,f5C,o4C,gg,o0C,'tab','listIndex','listIndex')
 _(o8C,c9C)
 _(c6C,o8C)
 return c6C
 }
-o2C.wxXCkey=4
+o2C.wxXCkey=2
 _2z(z,19,x3C,e,s,gg,o2C,'item','index','index')
 _(oPC,b1C)
 _(r,oPC)
