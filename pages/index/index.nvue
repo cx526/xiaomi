@@ -1,10 +1,3 @@
-<!-- 
-	1.默认flex布局，且为方向为纵向;
-	2.默认为盒模型;
-	3.元素属性只能单一拆分写;
-	4.字体必须被包裹在<text>标签中;
-	5.样式引入格式<style src="@/static/font/iconfont.css"></style>
--->
 <template>
 	<div>
 		<div style="height: 300px;border-color: #0077AA;margin-bottom: 40px;border-width: 1px;border-style: solid;flex-direction: row">
@@ -16,14 +9,11 @@
 			</div>
 		</div>
 		<list>
-			<cell v-for="(num,index) in lists" class="cell" :key="index">
+			<cell v-for="(num,index) in lists" class="cell" :key="index" @click="emit(num)">
 				<text>{{num}}</text>
 			</cell>
 			<loading @loading="loading" :display="isShow">
 					<text style="text-align: center;color: #0086B3;width: 750px;">数据加载中</text>
-			
-					
-					
 				
 			</loading>
 		</list>
@@ -35,7 +25,8 @@
 		data () {
 			return {
 				isShow: 'hide',
-				lists: ['A', 'B', 'C', 'D', 'E']
+				lists: ['A', 'B', 'C', 'D', 'E'],
+				
 			}
 		},
 		methods: {
@@ -45,8 +36,12 @@
 					this.isShow = 'hide';
 					this.lists = [...this.lists,...['a','b']];
 				},2000)
-			}
+			},
+			emit(num) {
+				uni.$emit('index',num)
+			},
 		},
+	
 	}
 </script>
 

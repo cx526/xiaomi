@@ -1068,6 +1068,7 @@ function gz$gwx_2(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_2)return __WXML_GLOBAL__.ops_cached.$gwx_2
 __WXML_GLOBAL__.ops_cached.$gwx_2=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([a,[[7],[3,'title']]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_2);return __WXML_GLOBAL__.ops_cached.$gwx_2
 }
 function gz$gwx_3(){
@@ -1101,6 +1102,10 @@ d_[x[1]]={}
 var m1=function(e,s,r,gg){
 var z=gz$gwx_2()
 var fE=_n('view')
+var cF=_n('text')
+var hG=_oz(z,0,e,s,gg)
+_(cF,hG)
+_(fE,cF)
 _(r,fE)
 return r
 }
@@ -1108,16 +1113,16 @@ e_[x[1]]={f:m1,j:[],i:[],ti:[],ic:[]}
 d_[x[2]]={}
 var m2=function(e,s,r,gg){
 var z=gz$gwx_3()
-var hG=_n('view')
-_(r,hG)
+var cI=_n('view')
+_(r,cI)
 return r
 }
 e_[x[2]]={f:m2,j:[],i:[],ti:[],ic:[]}
 d_[x[3]]={}
 var m3=function(e,s,r,gg){
 var z=gz$gwx_4()
-var cI=_n('view')
-_(r,cI)
+var lK=_n('view')
+_(r,lK)
 return r
 }
 e_[x[3]]={f:m3,j:[],i:[],ti:[],ic:[]}
@@ -1253,9 +1258,6 @@ __wxAppCode__['pages/cart/cart.wxml']=$gwx('./pages/cart/cart.wxml');
 
 __wxAppCode__['pages/class/class.wxss']=undefined;    
 __wxAppCode__['pages/class/class.wxml']=$gwx('./pages/class/class.wxml');
-
-__wxAppCode__['pages/index/index.wxss']=undefined;    
-__wxAppCode__['pages/index/index.wxml']=$gwx('./pages/index/index.wxml');
 
 __wxAppCode__['pages/my/my.wxss']=undefined;    
 __wxAppCode__['pages/my/my.wxml']=$gwx('./pages/my/my.wxml');

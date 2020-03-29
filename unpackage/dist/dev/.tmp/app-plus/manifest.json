@@ -94,10 +94,7 @@
       "compilerVersion": "2.3.7",
       "control": "v8",
       "nvueCompiler": "weex",
-      "renderer": "auto",
-      "nvue": {
-        "flex-direction": "column"
-      }
+      "renderer": "auto"
     },
     "tabBar": {
       "color": "#B9B9B9",
