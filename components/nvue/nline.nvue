@@ -1,0 +1,17 @@
+<template>
+	<div class="line"></div>
+</template>
+
+<script>
+	export default {
+		
+	}
+</script>
+
+<style scoped>
+	.line {
+		width: 750px;
+		height: 18px;
+		background-color: #f8f9fb;
+	}
+</style>
