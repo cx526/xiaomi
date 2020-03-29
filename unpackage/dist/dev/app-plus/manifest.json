@@ -4,7 +4,7 @@
     "iPhone",
     "iPad"
   ],
-  "id": "",
+  "id": "__UNI__1EABC72",
   "name": "uniStore",
   "version": {
     "name": "1.0.0",
@@ -35,9 +35,10 @@
     },
     "popGesture": "close",
     "launchwebview": {
-      "id": "1",
+      "id": "2",
       "kernel": "WKWebview",
-      "uni-app": "auto"
+      "uni-app": "auto",
+      "render": "always"
     },
     "statusbar": {
       "immersed": "supportedDevice",
@@ -45,7 +46,7 @@
       "background": "#fff"
     },
     "usingComponents": true,
-    "nvueCompiler": "uni-app",
+    "nvueCompiler": "weex",
     "distribute": {
       "google": {
         "permissions": [
@@ -92,7 +93,7 @@
     "uni-app": {
       "compilerVersion": "2.3.7",
       "control": "v8",
-      "nvueCompiler": "uni-app",
+      "nvueCompiler": "weex",
       "renderer": "auto",
       "nvue": {
         "flex-direction": "column"
@@ -129,11 +130,7 @@
           "text": "我的"
         }
       ],
-      "height": "50px",
-      "child": [
-        "lauchwebview"
-      ],
-      "selected": 0
+      "height": "50px"
     }
   }
 }
