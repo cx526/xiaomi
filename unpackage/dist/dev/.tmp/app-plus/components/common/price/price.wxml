@@ -1,1 +1,0 @@
-<view><view class="new"><text style="font-size:20rpx;position:relative;top:-8rpx;">￥</text><text>{{price}}</text></view></view>

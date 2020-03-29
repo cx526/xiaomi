@@ -3,7 +3,7 @@
 		<scroll-view scroll-x class="tabBars" :scroll-into-view="id" scroll-with-animation="true">
 			<block v-for="(item, index) in tabList" :key="index">
 				<view @click="changeTabBars(index)" :id="'tab' + index">
-					<text :class="tabIndex == index ? 'active' : ''">{{ item.name }}</text>
+					<text :class="[tabIndex == index ? 'active' : '']">{{ item.name }}</text>
 				</view>
 			</block>
 		</scroll-view>
