@@ -324,6 +324,11 @@ export default {
 			}
 		})
 	},
+	onNavigationBarSearchInputClicked() {
+		uni.navigateTo({
+			url:'/pages/search/search'
+		})
+	},
 	methods: {
 		// tab切换
 		changeTabBars(index) {
