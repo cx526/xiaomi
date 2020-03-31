@@ -33,7 +33,7 @@
             box-sizing: border-box;
     line-height: 90rpx;
     padding-left: 18rpx;
-    font-size: 24rpx;
+    font-size: 28rpx;
     font-weight: 700;
 }
 .card-box .card-img {

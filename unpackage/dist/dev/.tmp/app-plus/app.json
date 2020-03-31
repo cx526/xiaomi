@@ -5,7 +5,8 @@
     "pages/my/my",
     "pages/cart/cart",
     "components/common/line/line",
-    "pages/search/search"
+    "pages/search/search",
+    "components/search/result/result"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,0 +1,37 @@
+{
+  "id": "1719803",
+  "name": "仿小米商城",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5330036",
+      "name": "排序-降序",
+      "font_class": "paixu-jiangxu",
+      "unicode": "e75c",
+      "unicode_decimal": 59228
+    },
+    {
+      "icon_id": "5330057",
+      "name": "排序-升序",
+      "font_class": "paixu-shengxu",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
+    },
+    {
+      "icon_id": "4933431",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e764",
+      "unicode_decimal": 59236
+    },
+    {
+      "icon_id": "10635090",
+      "name": "扫码",
+      "font_class": "scan",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    }
+  ]
+}

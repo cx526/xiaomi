@@ -10,6 +10,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-paixu-jiangxu:before {
+  content: "\e75c";
+}
+
+.icon-paixu-shengxu:before {
+  content: "\e75d";
+}
+
 .icon-xiaoxi:before {
   content: "\e764";
 }

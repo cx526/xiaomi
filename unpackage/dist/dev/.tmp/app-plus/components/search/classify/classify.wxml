@@ -1,0 +1,1 @@
+<view><view class="keyword"><block wx:for="{{classify}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block><view class="keyword-item"><text>{{item.name}}</text></view></block></block></view></view>
