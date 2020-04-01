@@ -18,5 +18,9 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-drawer": "/components/uni-drawer/uni-drawer",
+    "card": "/components/common/card/card",
+    "params": "/components/common/params/params"
+  }
 }

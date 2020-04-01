@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="card-box" :style="{'border-bottom':borderB}">
-			<view class="card-title">
+			<view class="card-title" :class="fontWeight?'fontWeightActive':''">
 				<slot name="title">
 					<text>{{title}}</text>
 				</slot>
@@ -21,6 +21,10 @@
 			borderB: {
 				type: String,
 				default: 'none'
+			},
+			fontWeight: {
+				type: Boolean,
+				default: true
 			}
 		},
 		data() {
@@ -39,7 +43,7 @@
 			line-height: 90rpx;
 			padding-left: 18rpx;
 			font-size: 28rpx;
-			font-weight: 700;
+			
 		}
 		.card-img {
 			width: 100%;
@@ -48,5 +52,8 @@
 				display: block;
 			}
 		}
+	}
+	.fontWeightActive {
+		font-weight: 700 !important;
 	}
 </style>

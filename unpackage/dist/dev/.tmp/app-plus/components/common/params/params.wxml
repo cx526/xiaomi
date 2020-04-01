@@ -1,0 +1,1 @@
+<view><view class="search-box"><view class="search"><block wx:for="{{paramsList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="search-item"><text>{{item.name}}</text></view></block></view></view></view>
