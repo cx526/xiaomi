@@ -3,7 +3,9 @@
 		<view class="search-box">
 			<view class="search">
 				<view class="search-item"
-				v-for="(item,index) in paramsList" :key="index">
+				v-for="(item,index) in paramsList.list" :key="index"
+				@tap="changeIndex(index,paramsList.type)"
+				:class="paramsList.selectedIndex == index?'active': ''">
 					<text>{{item.name}}</text>
 				</view>
 			</view>
@@ -14,13 +16,18 @@
 <script>
 	export default {
 		props: {
-			paramsList: Array
+			paramsList: Object
 		},
 		data() {
 			return {
 				
 			};
-		}
+		},
+		methods:{
+			changeIndex(index,type) {
+				this.$emit('changeIndex',{index: index,type: type})
+			},
+		},
 	}
 </script>
 

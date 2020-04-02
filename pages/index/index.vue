@@ -23,13 +23,13 @@
 						<template v-else-if="tab.type == 'navList'">
 							<Nav :navList="tab.data"></Nav>
 							<!-- 分割线 -->
-							<Line></Line>
+							<cutLine></cutLine>
 						</template>
 						<!-- 三图广告 -->
 						<template v-else-if="tab.type == 'threeAdv'">
 							<threeAdv :threeAdv="tab.data"></threeAdv>
 							<!-- 分割线 -->
-							<Line></Line>
+							<cutLine></cutLine>
 						</template>
 						<!-- 小卡片 -->
 					<!-- 	<Card title="每日精选" bodyImg="/static/images/demo/demo4.jpg"></Card> -->
@@ -45,7 +45,7 @@
 <script>
 import SwiperC from '@/components/common/swiper/swiper.vue'
 import Nav from '@/components/common/nav/nav.vue'
-import Line from '@/components/common/line/line.vue'
+import cutLine from '@/components/common/line/line.vue'
 import threeAdv from '@/components/index/three-adv/three-adv.vue'
 import Card from '@/components/common/card/card.vue'
 import List from '@/components/common/list/list.vue'
@@ -311,7 +311,7 @@ export default {
 	components:{
 		SwiperC,
 		Nav,
-		Line,
+		cutLine,
 		threeAdv,
 		Card,
 		List

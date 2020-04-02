@@ -24,6 +24,8 @@
 					<text>筛选</text>			
 				</view>
 			</view>
+			<!-- 产品列表 -->
+			<List :productList="productList"></List>
 			<!-- 侧拉框 -->
 			<uni-drawer 
 			:visible="drawerShow" mode="right" 
@@ -31,9 +33,9 @@
 			>
 				<view>
 						<Card title="服务" :fontWeight="false"></Card>
-						<Params :paramsList="service"></Params>
+						<Params :paramsList="service" @changeIndex="changeIndex"></Params>
 						<Card title="分类" :fontWeight="false"></Card>
-						<Params :paramsList="classify"></Params>
+						<Params :paramsList="classify" @changeIndex="changeIndex"></Params>
 						<view class="drawer-bottom">
 							<view class="drawer-btn">
 								<view>重置</view>
@@ -50,6 +52,8 @@
 	import uniDrawer from '@/components/uni-drawer/uni-drawer.vue'
 	import Card from '@/components/common/card/card.vue'
 	import Params from '@/components/common/params/params.vue'
+	import Price from '@/components/common/price/price.vue'
+	import List from '@/components/search/list/list.vue'
 	export default {
 		data() {
 			return {
@@ -66,23 +70,69 @@
 				// 抽屉数据
 				drawerShow: false,
 				// 分类数据
-				service: [
-					{name: '促销'},
-					{name: '分期'},
-					{name: '仅看有货'}
+				service: {
+					type: 'service',
+					selectedIndex: 0,
+					list: [
+						{name: '促销'},
+						{name: '分期'},
+						{name: '仅看有货'}
+					],
+				},
+				classify: {
+					type: 'classify',
+					selectedIndex: 0,
+					list: [
+						{name: '耳机'},
+						{name: '户外'},
+						{name: '配件'}
+					]
+				},
+				// 搜索列表数据
+				productList: [
+					{
+						title: '真无线蓝牙耳机',
+						topic: '/static/images/demo/demo6.jpg',
+						des: '雅致简约/分体式入耳/收纳盒充电/蓝牙5.0/触控操作',
+						price: 100,
+						count: 1222,
+						percent: '97%'
+					},
+					{
+						title: '真无线蓝牙耳机',
+						topic: '/static/images/demo/demo6.jpg',
+						des: '雅致简约/分体式入耳/收纳盒充电/蓝牙5.0/触控操作',
+						price: 100,
+						count: 1222,
+						percent: '97%'
+					},
+					{
+						title: '真无线蓝牙耳机',
+						topic: '/static/images/demo/demo6.jpg',
+						des: '雅致简约/分体式入耳/收纳盒充电/蓝牙5.0/触控操作',
+						price: 100,
+						count: 1222,
+						percent: '97%'
+					},
+					{
+						title: '真无线蓝牙耳机',
+						topic: '/static/images/demo/demo6.jpg',
+						des: '雅致简约/分体式入耳/收纳盒充电/蓝牙5.0/触控操作',
+						price: 100,
+						count: 1222,
+						percent: '97%'
+					}
 				],
-				classify: [
-					{name: '耳机'},
-					{name: '户外'},
-					{name: '配件'}
-				],
+				
 				
 			}
 		},
 		components: {
 			uniDrawer,
 			Card,
-			Params
+			Params,
+			Price,
+			List
 		},
 		methods: {
 			// tab切换
@@ -97,6 +147,17 @@
 				else {
 					this.screen.list[index].status=this.screen.list[index].status == 1?2:1
 				}
+			},
+			// 监听选择侧滑栏的商品属性
+			changeIndex(payload) {
+				let type = payload.type;
+				if(type == 'service') {
+					this.service.selectedIndex = payload.index
+				}
+				else if(type == 'classify') {
+					this.classify.selectedIndex = payload.index
+				}
+				
 			}
 		}
 	}
@@ -132,6 +193,7 @@
 			}
 		}
 	}
+	
 	// 抽屉
 	.drawer-bottom {
 		box-sizing: border-box;

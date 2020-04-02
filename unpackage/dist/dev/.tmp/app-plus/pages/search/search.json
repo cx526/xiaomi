@@ -22,7 +22,7 @@
     "card": "/components/common/card/card",
     "keywords": "/components/search/keywords/keywords",
     "classify": "/components/search/classify/classify",
-    "line": "/components/common/line/line",
+    "cut-line": "/components/common/line/line",
     "record": "/components/search/record/record"
   }
 }

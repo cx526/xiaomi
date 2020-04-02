@@ -4,7 +4,7 @@
 		<Keywords :hot="hot"></Keywords>
 		<Card title="常用分类"></Card>
 		<Classify :classify="classify"></Classify>
-		<Line></Line>
+		<cutLine></cutLine>
 		<Card title="搜索记录" borderB="1px solid #F0F0F0"></Card>
 		<Record :record="record"></Record>
 	</view>
@@ -14,7 +14,7 @@
 	import Card from '@/components/common/card/card.vue'
 	import Keywords from '@/components/search/keywords/keywords.vue'
 	import Classify from '@/components/search/classify/classify.vue'
-	import Line from '@/components/common/line/line.vue'
+	import cutLine from '@/components/common/line/line.vue'
 	import Record from '@/components/search/record/record.vue'
 	export default {
 		data() {
@@ -49,7 +49,7 @@
 			Card,
 			Keywords,
 			Classify,
-			Line,
+			cutLine,
 			Record
 		},
 		// 点击原生导航栏上的搜索按钮

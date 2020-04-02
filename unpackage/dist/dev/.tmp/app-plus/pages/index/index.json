@@ -30,7 +30,7 @@
   "usingComponents": {
     "swiper-c": "/components/common/swiper/swiper",
     "nav": "/components/common/nav/nav",
-    "line": "/components/common/line/line",
+    "cut-line": "/components/common/line/line",
     "three-adv": "/components/index/three-adv/three-adv",
     "card": "/components/common/card/card",
     "list": "/components/common/list/list"
