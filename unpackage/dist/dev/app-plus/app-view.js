@@ -1323,6 +1323,27 @@ function gz$gwx_16(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_16)return __WXML_GLOBAL__.ops_cached.$gwx_16
 __WXML_GLOBAL__.ops_cached.$gwx_16=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'box'])
+Z([3,'left'])
+Z([3,'true'])
+Z([[2,'+'],[[2,'+'],[1,'height:'],[[7],[3,'screenHeight']]],[1,';']])
+Z([3,'__i0__'])
+Z([3,'n'])
+Z([1,100])
+Z([3,'*this'])
+Z([3,'left-item'])
+Z([a,[[7],[3,'n']]])
+Z([3,'right'])
+Z(z[2])
+Z(z[3])
+Z([3,'product'])
+Z([3,'__i1__'])
+Z(z[5])
+Z(z[6])
+Z(z[7])
+Z([3,'product-item'])
+Z([3,'/static/images/demo/cate_05.png'])
+Z([3,'分类一'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_16);return __WXML_GLOBAL__.ops_cached.$gwx_16
 }
 function gz$gwx_17(){
@@ -1902,6 +1923,44 @@ d_[x[15]]={}
 var m15=function(e,s,r,gg){
 var z=gz$gwx_16()
 var hWF=_n('view')
+_rz(z,hWF,'class',0,e,s,gg)
+var oXF=_mz(z,'scroll-view',['class',1,'scrollY',1,'style',2],[],e,s,gg)
+var cYF=_v()
+_(oXF,cYF)
+var oZF=function(a2F,l1F,t3F,gg){
+var b5F=_n('view')
+_rz(z,b5F,'class',8,a2F,l1F,gg)
+var o6F=_n('text')
+var x7F=_oz(z,9,a2F,l1F,gg)
+_(o6F,x7F)
+_(b5F,o6F)
+_(t3F,b5F)
+return t3F
+}
+cYF.wxXCkey=2
+_2z(z,6,oZF,e,s,gg,cYF,'n','__i0__','*this')
+_(hWF,oXF)
+var o8F=_mz(z,'scroll-view',['class',10,'scrollY',1,'style',2],[],e,s,gg)
+var f9F=_n('view')
+_rz(z,f9F,'class',13,e,s,gg)
+var c0F=_v()
+_(f9F,c0F)
+var hAG=function(cCG,oBG,oDG,gg){
+var aFG=_n('view')
+_rz(z,aFG,'class',18,cCG,oBG,gg)
+var tGG=_mz(z,'image',['mode',-1,'src',19],[],cCG,oBG,gg)
+_(aFG,tGG)
+var eHG=_n('text')
+var bIG=_oz(z,20,cCG,oBG,gg)
+_(eHG,bIG)
+_(aFG,eHG)
+_(oDG,aFG)
+return oDG
+}
+c0F.wxXCkey=2
+_2z(z,16,hAG,e,s,gg,c0F,'n','__i1__','*this')
+_(o8F,f9F)
+_(hWF,o8F)
 _(r,hWF)
 return r
 }
@@ -1909,119 +1968,119 @@ e_[x[15]]={f:m15,j:[],i:[],ti:[],ic:[]}
 d_[x[16]]={}
 var m16=function(e,s,r,gg){
 var z=gz$gwx_17()
-var cYF=_n('view')
-var oZF=_mz(z,'scroll-view',['scrollX',-1,'class',0,'scrollIntoView',1,'scrollWithAnimation',1],[],e,s,gg)
-var l1F=_v()
-_(oZF,l1F)
-var a2F=function(e4F,t3F,b5F,gg){
-var x7F=_mz(z,'view',['bindtap',7,'data-event-opts',1,'id',2],[],e4F,t3F,gg)
-var o8F=_n('text')
-_rz(z,o8F,'class',10,e4F,t3F,gg)
-var f9F=_oz(z,11,e4F,t3F,gg)
-_(o8F,f9F)
-_(x7F,o8F)
-_(b5F,x7F)
-return b5F
-}
-l1F.wxXCkey=2
-_2z(z,5,a2F,e,s,gg,l1F,'item','index','index')
-_(cYF,oZF)
-var c0F=_mz(z,'swiper',['bindchange',12,'current',1,'data-event-opts',2,'duration',3,'style',4],[],e,s,gg)
-var hAG=_v()
-_(c0F,hAG)
-var oBG=function(oDG,cCG,lEG,gg){
-var tGG=_n('swiper-item')
-var eHG=_mz(z,'scroll-view',['bindscrolltolower',21,'data-event-opts',1,'scrollY',2,'style',3],[],oDG,cCG,gg)
-var bIG=_v()
-_(eHG,bIG)
-var oJG=function(oLG,xKG,fMG,gg){
-var hOG=_v()
-_(fMG,hOG)
-if(_oz(z,29,oLG,xKG,gg)){hOG.wxVkey=1
-var oPG=_mz(z,'swiper-c',['bind:__l',30,'swiperUrl',1,'vueId',2],[],oLG,xKG,gg)
-_(hOG,oPG)
-}
-else{hOG.wxVkey=2
-var cQG=_v()
-_(hOG,cQG)
-if(_oz(z,33,oLG,xKG,gg)){cQG.wxVkey=1
-var oRG=_mz(z,'nav',['bind:__l',34,'navList',1,'vueId',2],[],oLG,xKG,gg)
-_(cQG,oRG)
-var lSG=_mz(z,'cut-line',['bind:__l',37,'vueId',1],[],oLG,xKG,gg)
-_(cQG,lSG)
-}
-else{cQG.wxVkey=2
-var aTG=_v()
-_(cQG,aTG)
-if(_oz(z,39,oLG,xKG,gg)){aTG.wxVkey=1
-var tUG=_mz(z,'three-adv',['bind:__l',40,'threeAdv',1,'vueId',2],[],oLG,xKG,gg)
+var xKG=_n('view')
+var oLG=_mz(z,'scroll-view',['scrollX',-1,'class',0,'scrollIntoView',1,'scrollWithAnimation',1],[],e,s,gg)
+var fMG=_v()
+_(oLG,fMG)
+var cNG=function(oPG,hOG,cQG,gg){
+var lSG=_mz(z,'view',['bindtap',7,'data-event-opts',1,'id',2],[],oPG,hOG,gg)
+var aTG=_n('text')
+_rz(z,aTG,'class',10,oPG,hOG,gg)
+var tUG=_oz(z,11,oPG,hOG,gg)
 _(aTG,tUG)
-var eVG=_mz(z,'cut-line',['bind:__l',43,'vueId',1],[],oLG,xKG,gg)
-_(aTG,eVG)
+_(lSG,aTG)
+_(cQG,lSG)
+return cQG
 }
-else{aTG.wxVkey=2
+fMG.wxXCkey=2
+_2z(z,5,cNG,e,s,gg,fMG,'item','index','index')
+_(xKG,oLG)
+var eVG=_mz(z,'swiper',['bindchange',12,'current',1,'data-event-opts',2,'duration',3,'style',4],[],e,s,gg)
 var bWG=_v()
-_(aTG,bWG)
-if(_oz(z,45,oLG,xKG,gg)){bWG.wxVkey=1
-var oXG=_mz(z,'list',['bind:__l',46,'productList',1,'vueId',2],[],oLG,xKG,gg)
-_(bWG,oXG)
+_(eVG,bWG)
+var oXG=function(oZG,xYG,f1G,gg){
+var h3G=_n('swiper-item')
+var o4G=_mz(z,'scroll-view',['bindscrolltolower',21,'data-event-opts',1,'scrollY',2,'style',3],[],oZG,xYG,gg)
+var c5G=_v()
+_(o4G,c5G)
+var o6G=function(a8G,l7G,t9G,gg){
+var bAH=_v()
+_(t9G,bAH)
+if(_oz(z,29,a8G,l7G,gg)){bAH.wxVkey=1
+var oBH=_mz(z,'swiper-c',['bind:__l',30,'swiperUrl',1,'vueId',2],[],a8G,l7G,gg)
+_(bAH,oBH)
 }
-bWG.wxXCkey=1
-bWG.wxXCkey=3
+else{bAH.wxVkey=2
+var xCH=_v()
+_(bAH,xCH)
+if(_oz(z,33,a8G,l7G,gg)){xCH.wxVkey=1
+var oDH=_mz(z,'nav',['bind:__l',34,'navList',1,'vueId',2],[],a8G,l7G,gg)
+_(xCH,oDH)
+var fEH=_mz(z,'cut-line',['bind:__l',37,'vueId',1],[],a8G,l7G,gg)
+_(xCH,fEH)
 }
-aTG.wxXCkey=1
-aTG.wxXCkey=3
-aTG.wxXCkey=3
+else{xCH.wxVkey=2
+var cFH=_v()
+_(xCH,cFH)
+if(_oz(z,39,a8G,l7G,gg)){cFH.wxVkey=1
+var hGH=_mz(z,'three-adv',['bind:__l',40,'threeAdv',1,'vueId',2],[],a8G,l7G,gg)
+_(cFH,hGH)
+var oHH=_mz(z,'cut-line',['bind:__l',43,'vueId',1],[],a8G,l7G,gg)
+_(cFH,oHH)
 }
-cQG.wxXCkey=1
-cQG.wxXCkey=3
-cQG.wxXCkey=3
+else{cFH.wxVkey=2
+var cIH=_v()
+_(cFH,cIH)
+if(_oz(z,45,a8G,l7G,gg)){cIH.wxVkey=1
+var oJH=_mz(z,'list',['bind:__l',46,'productList',1,'vueId',2],[],a8G,l7G,gg)
+_(cIH,oJH)
 }
-hOG.wxXCkey=1
-hOG.wxXCkey=3
-hOG.wxXCkey=3
-return fMG
+cIH.wxXCkey=1
+cIH.wxXCkey=3
 }
-bIG.wxXCkey=4
-_2z(z,27,oJG,oDG,cCG,gg,bIG,'tab','listIndex','listIndex')
-_(tGG,eHG)
-_(lEG,tGG)
-return lEG
+cFH.wxXCkey=1
+cFH.wxXCkey=3
+cFH.wxXCkey=3
 }
-hAG.wxXCkey=4
-_2z(z,19,oBG,e,s,gg,hAG,'item','index','index')
-_(cYF,c0F)
-_(r,cYF)
+xCH.wxXCkey=1
+xCH.wxXCkey=3
+xCH.wxXCkey=3
+}
+bAH.wxXCkey=1
+bAH.wxXCkey=3
+bAH.wxXCkey=3
+return t9G
+}
+c5G.wxXCkey=4
+_2z(z,27,o6G,oZG,xYG,gg,c5G,'tab','listIndex','listIndex')
+_(h3G,o4G)
+_(f1G,h3G)
+return f1G
+}
+bWG.wxXCkey=4
+_2z(z,19,oXG,e,s,gg,bWG,'item','index','index')
+_(xKG,eVG)
+_(r,xKG)
 return r
 }
 e_[x[16]]={f:m16,j:[],i:[],ti:[],ic:[]}
 d_[x[17]]={}
 var m17=function(e,s,r,gg){
 var z=gz$gwx_18()
-var oZG=_n('view')
-_(r,oZG)
+var aLH=_n('view')
+_(r,aLH)
 return r
 }
 e_[x[17]]={f:m17,j:[],i:[],ti:[],ic:[]}
 d_[x[18]]={}
 var m18=function(e,s,r,gg){
 var z=gz$gwx_19()
-var c2G=_n('view')
-var h3G=_mz(z,'card',['bind:__l',0,'bodyImg',1,'title',1,'vueId',2],[],e,s,gg)
-_(c2G,h3G)
-var o4G=_mz(z,'keywords',['bind:__l',4,'hot',1,'vueId',2],[],e,s,gg)
-_(c2G,o4G)
-var c5G=_mz(z,'card',['bind:__l',7,'title',1,'vueId',2],[],e,s,gg)
-_(c2G,c5G)
-var o6G=_mz(z,'classify',['bind:__l',10,'classify',1,'vueId',2],[],e,s,gg)
-_(c2G,o6G)
-var l7G=_mz(z,'cut-line',['bind:__l',13,'vueId',1],[],e,s,gg)
-_(c2G,l7G)
-var a8G=_mz(z,'card',['bind:__l',15,'borderB',1,'title',2,'vueId',3],[],e,s,gg)
-_(c2G,a8G)
-var t9G=_mz(z,'record',['bind:__l',19,'record',1,'vueId',2],[],e,s,gg)
-_(c2G,t9G)
-_(r,c2G)
+var eNH=_n('view')
+var bOH=_mz(z,'card',['bind:__l',0,'bodyImg',1,'title',1,'vueId',2],[],e,s,gg)
+_(eNH,bOH)
+var oPH=_mz(z,'keywords',['bind:__l',4,'hot',1,'vueId',2],[],e,s,gg)
+_(eNH,oPH)
+var xQH=_mz(z,'card',['bind:__l',7,'title',1,'vueId',2],[],e,s,gg)
+_(eNH,xQH)
+var oRH=_mz(z,'classify',['bind:__l',10,'classify',1,'vueId',2],[],e,s,gg)
+_(eNH,oRH)
+var fSH=_mz(z,'cut-line',['bind:__l',13,'vueId',1],[],e,s,gg)
+_(eNH,fSH)
+var cTH=_mz(z,'card',['bind:__l',15,'borderB',1,'title',2,'vueId',3],[],e,s,gg)
+_(eNH,cTH)
+var hUH=_mz(z,'record',['bind:__l',19,'record',1,'vueId',2],[],e,s,gg)
+_(eNH,hUH)
+_(r,eNH)
 return r
 }
 e_[x[18]]={f:m18,j:[],i:[],ti:[],ic:[]}
@@ -2194,7 +2253,7 @@ __wxAppCode__['components/uni-drawer/uni-drawer.wxml']=$gwx('./components/uni-dr
 __wxAppCode__['pages/cart/cart.wxss']=undefined;    
 __wxAppCode__['pages/cart/cart.wxml']=$gwx('./pages/cart/cart.wxml');
 
-__wxAppCode__['pages/class/class.wxss']=undefined;    
+__wxAppCode__['pages/class/class.wxss']=setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"box { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-sizing: border-box; box-sizing: border-box; height: 100%; }\n.",[1],"box wx-scroll-view { -webkit-box-flex: 3.5; -webkit-flex: 3.5; -ms-flex: 3.5; flex: 3.5; -webkit-box-sizing: border-box; box-sizing: border-box; }\n.",[1],"box .",[1],"left { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; border-right: 1px solid #F3F3F3; margin-right: ",[0,34],"; }\n.",[1],"box .",[1],"left .",[1],"left-item { -webkit-box-sizing: border-box; box-sizing: border-box; padding: ",[0,36]," 0; text-align: center; font-size: ",[0,32],"; color: #2A2A2A; border-bottom: 1px solid #F3F3F3; }\n.",[1],"box .",[1],"left .",[1],"left-item wx-text { display: block; }\n.",[1],"box .",[1],"right { -webkit-box-sizing: border-box; box-sizing: border-box; padding-top: ",[0,14],"; }\n.",[1],"box .",[1],"right .",[1],"product { -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }\n.",[1],"box .",[1],"right .",[1],"product .",[1],"product-item { margin-right: ",[0,66],"; margin-bottom: ",[0,66],"; width: calc(33.33% - ",[0,66],"); -webkit-box-sizing: border-box; box-sizing: border-box; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }\n.",[1],"box .",[1],"right .",[1],"product .",[1],"product-item wx-image { width: 100%; height: ",[0,90],"; }\n.",[1],"box .",[1],"right .",[1],"product .",[1],"product-item wx-text { margin-top: ",[0,28],"; font-size: ",[0,24],"; color: #2A2A2A; }\n.",[1],"active { color: #FC7512; border-left: 4px solid #FC7512; }\n",],undefined,{path:"./pages/class/class.wxss"});    
 __wxAppCode__['pages/class/class.wxml']=$gwx('./pages/class/class.wxml');
 
 __wxAppCode__['pages/index/index.wxss']=setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"line { height: ",[0,18],"; background: #F8F9FB; }\n@charset \x22UTF-8\x22;\n.",[1],"tabBars { -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%; white-space: nowrap; border-bottom: 1px solid #ccc; }\n.",[1],"tabBars wx-view { display: inline-block; -webkit-box-sizing: border-box; box-sizing: border-box; line-height: ",[0,90],"; font-size: ",[0,30],"; padding: 0 ",[0,30],"; }\n.",[1],"active { color: #e57228; border-bottom: 2px solid #e57228; padding-bottom: ",[0,20],"; }\n::-webkit-scrollbar { width: 0; height: 0; background-color: transparent; }\n",],"Some selectors are not allowed in component wxss, including tag name selectors, ID selectors, and attribute selectors.(./pages/index/index.wxss:78:1)",{path:"./pages/index/index.wxss"});    

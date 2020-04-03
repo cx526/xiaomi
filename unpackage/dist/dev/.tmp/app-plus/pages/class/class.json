@@ -1,3 +1,23 @@
 {
+  "scrollIndicator": "none",
+  "titleNView": {
+    "searchInput": {
+      "align": "left",
+      "backgroundColor": "#F7F7F7",
+      "borderRadius": "4px",
+      "disabled": true,
+      "placeholder": "智能积木 越野四驱车",
+      "placeholderColor": "#D3D3D3"
+    },
+    "buttons": [
+      {
+        "color": "#929292",
+        "float": "right",
+        "fontSize": "44rpx",
+        "fontSrc": "/static/font/iconfont.ttf",
+        "text": ""
+      }
+    ]
+  },
   "usingComponents": {}
 }
