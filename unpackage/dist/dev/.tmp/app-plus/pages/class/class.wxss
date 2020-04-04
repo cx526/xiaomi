@@ -69,42 +69,44 @@
 .box .right .product {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      -webkit-flex-wrap: wrap;
-          -ms-flex-wrap: wrap;
-              flex-wrap: wrap;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
 }
-.box .right .product .product-item {
-        margin-right: 66rpx;
-        margin-bottom: 66rpx;
-        width: calc(33.33% - 66rpx);
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
+.box .right .product .product-list {
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
 }
-.box .right .product .product-item image {
-          width: 100%;
-          height: 90rpx;
+.box .right .product .product-list .product-item {
+          margin-right: 66rpx;
+          margin-bottom: 66rpx;
+          width: calc(33.33% - 66rpx);
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
 }
-.box .right .product .product-item text {
-          margin-top: 28rpx;
-          font-size: 24rpx;
-          color: #2A2A2A;
+.box .right .product .product-list .product-item image {
+            width: 120rpx;
+            height: 120rpx;
+}
+.box .right .product .product-list .product-item text {
+            margin-top: 28rpx;
+            font-size: 20rpx;
+            color: #2A2A2A;
 }
 .active {
   color: #FC7512;
