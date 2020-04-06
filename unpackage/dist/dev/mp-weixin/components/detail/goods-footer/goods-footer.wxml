@@ -1,0 +1,1 @@
+<view class="footer-box"><view class="footer-min" hover-class="click"><text class="icon iconfont icon-shoucang" style="font-size:36rpx;"></text><text>收藏</text></view><view class="footer-min" hover-class="click"><text class="icon iconfont icon-gouwuche"></text><text>购物车</text></view><view class="footer-max"><button>加入购物车</button></view></view>

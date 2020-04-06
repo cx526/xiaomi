@@ -1,5 +1,5 @@
 @font-face {font-family: "iconfont";
-  src: url('~@/static/font/iconfont.ttf')
+  src: url('~@/static/font/iconfont.ttf') /* iOS 4.1- */
 }
 
 .iconfont {
@@ -8,6 +8,50 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-huifu:before {
+  content: "\e65d";
+}
+
+.icon-chaoaiwawa:before {
+  content: "\e609";
+}
+
+.icon-dizhi:before {
+  content: "\e65e";
+}
+
+.icon-gouwuche:before {
+  content: "\e62c";
+}
+
+.icon-shoucang:before {
+  content: "\e613";
+}
+
+.icon-like:before {
+  content: "\e683";
+}
+
+.icon-more:before {
+  content: "\e628";
+}
+
+.icon-top:before {
+  content: "\e626";
+}
+
+.icon-cpu:before {
+  content: "\e688";
+}
+
+.icon-left:before {
+  content: "\e73d";
+}
+
+.icon-down:before {
+  content: "\e6f7";
 }
 
 .icon-paixu-jiangxu:before {

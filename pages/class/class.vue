@@ -2,7 +2,8 @@
 	<view class="box">
 		<scroll-view scroll-y="true" 
 		:style="{height: screenHeight}"
-		class="left">
+		class="left" id="leftScroll"
+		:scroll-top="leftScrollTop">
 			<block v-for="(item,index) in navList" :key="index">
 				<view class="left-item" @click="changeCurrentIndex(index)">
 					<text :class="currentIndex == index? 'active': ''">{{item.name}}</text>
@@ -37,12 +38,36 @@
 				// 左侧导航栏数据
 				currentIndex: 0,
 				leftDomData: [],
+				// 元素的高度
+				cateItemHeight: '',
+				leftScrollTop: '',
 				navList: [],
 				// 右侧商品数据
 				goodsList: [],
 				rightDomData: [],
 				rightScrollTop: 0
 			};
+		},
+		watch:{
+			currentIndex(newVal,oldVal) {
+				// 获取每次滚动式左侧scroll-view的高度和滚动的高度scroll-top
+				const query = uni.createSelectorQuery().in(this);
+				query.select('#leftScroll').fields({
+					size:true,
+					scrollOffset:true
+				},data => {
+					let H = data.height;
+					let SH = data.scrollTop;
+					// 下边
+					if((this.leftDomData[newVal] + this.cateItemHeight) > (H + SH)) {
+						return this.leftScrollTop = this.leftDomData[newVal] + this.cateItemHeight - H
+					}
+					// 上边
+					if(SH > this.leftDomData[newVal]) {
+						this.leftScrollTop = this.leftDomData[newVal]
+					}
+				}).exec();
+			}
 		},
 		methods: {
 			// tab切换
@@ -61,7 +86,7 @@
 			},
 			// 获取模拟数据
 			getData() {
-				for(let i = 0;i < 20;i++) {
+				for(let i = 0;i < 18;i++) {
 					this.navList.push({
 						name: `分类${i}`
 					})
@@ -82,8 +107,14 @@
 			getDomRect() {
 				const query = uni.createSelectorQuery().in(this);
 				// 获取左侧导航栏各元素距离顶部的位置
-				query.selectAll('.left-item').boundingClientRect(data => {
+				query.selectAll('.left-item').fields({
+					size:true,
+					rect:true
+				},data => {
 					this.leftDomData = data.map(item => {
+						// 元素的高
+						this.cateItemHeight = item.height;
+						// 元素距离顶部的高度
 						return item.top
 					});
 				}).exec();
@@ -138,7 +169,7 @@
 		}
 		.right {
 			box-sizing: border-box;
-			padding-top: 14rpx;
+			// padding-top: 14rpx;
 			.product {
 				box-sizing: border-box;
 				.product-list {

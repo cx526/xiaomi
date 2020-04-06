@@ -1,1 +1,1 @@
-<view><view class="new"><text style="font-size:20rpx;position:relative;top:-8rpx;">￥</text><text>{{price}}</text></view></view>
+<view class="data-v-65d9c036"><view class="new data-v-65d9c036"><text style="font-size:20rpx;position:relative;top:-8rpx;" class="data-v-65d9c036">￥</text><text style="{{'font-weight:'+(weight)+';'}}" class="data-v-65d9c036">{{price}}</text></view></view>

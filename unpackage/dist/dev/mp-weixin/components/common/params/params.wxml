@@ -1,0 +1,1 @@
+<view><view class="search-box"><view class="search"><block wx:for="{{paramsList.list}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view data-event-opts="{{[['tap',[['changeIndex',[index,'$0'],['paramsList.type']]]]]}}" class="{{['search-item',paramsList.selectedIndex==index?'active':'']}}" bindtap="__e"><text>{{item.name}}</text></view></block></view></view></view>

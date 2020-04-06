@@ -26,7 +26,6 @@
 /* 文章场景相关 */
 swiper-item {
   width: 100%;
-  height: 350rpx;
 }
 swiper-item .swiper-item {
     width: 100%;

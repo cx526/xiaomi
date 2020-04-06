@@ -1,31 +1,39 @@
 <template>
 	<view>
 		<view class="search-box">
-			<view class="search">
-				<view class="search-item"
-				v-for="(item,index) in paramsList.list" :key="index"
-				@tap="changeIndex(index,paramsList.type)"
-				:class="paramsList.selectedIndex == index?'active': ''">
-					<text>{{item.name}}</text>
+			<view class="search" v-for="(list,index1) in paramsList" :key="index1">
+				<view><Card :title="list.label"></Card></view>
+				<view style="display: flex;">
+					<view class="search-item"
+					v-for="(item,index) in list.params" :key="index"
+					@tap="changeIndex({index1: index1,index: index})"
+					:class="item.active ?'active': ''">
+						<text>{{item.name}}</text>
+					</view>
 				</view>
+				
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import Card from '@/components/common/card/card'
 	export default {
 		props: {
-			paramsList: Object
+			paramsList: Array
 		},
 		data() {
 			return {
 				
 			};
 		},
+		components:{
+			Card
+		},
 		methods:{
-			changeIndex(index,type) {
-				this.$emit('changeIndex',{index: index,type: type})
+			changeIndex(payload) {
+				this.$emit('changeIndex',payload)
 			},
 		},
 	}
@@ -38,6 +46,7 @@
 		.search {
 			box-sizing: border-box;
 			display: flex;
+			flex-direction: column;
 			.search-item {
 				margin-right: 42rpx;
 				width: calc(33.33% - 28rpx);

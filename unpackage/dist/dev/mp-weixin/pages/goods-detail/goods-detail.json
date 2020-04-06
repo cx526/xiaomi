@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "swiper-c": "/components/common/swiper/swiper",
+    "goods-info": "/components/detail/goods-info/goods-info",
+    "goods-property": "/components/detail/goods-property/goods-property",
+    "goods-appraise": "/components/detail/goods-appraise/goods-appraise",
+    "u-parse": "/components/uParse/src/wxParse",
+    "card": "/components/common/card/card",
+    "list": "/components/common/list/list",
+    "goods-footer": "/components/detail/goods-footer/goods-footer",
+    "popup": "/components/common/popup/popup"
+  }
+}

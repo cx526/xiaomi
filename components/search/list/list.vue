@@ -30,6 +30,7 @@
 </template>
 
 <script>
+	import Price from '@/components/common/price/price'
 	export default {
 		props: {
 			productList: Array
@@ -38,6 +39,9 @@
 			return {
 				
 			};
+		},
+		components:{
+			Price
 		}
 	}
 </script>

@@ -32,10 +32,7 @@
 			@close="drawerShow = false"
 			>
 				<view>
-						<Card title="服务" :fontWeight="false"></Card>
-						<Params :paramsList="service" @changeIndex="changeIndex"></Params>
-						<Card title="分类" :fontWeight="false"></Card>
-						<Params :paramsList="classify" @changeIndex="changeIndex"></Params>
+						<Params :paramsList="productPrams" @changeIndex="changeIndex"></Params>
 						<view class="drawer-bottom">
 							<view class="drawer-btn">
 								<view>重置</view>
@@ -52,7 +49,7 @@
 	import uniDrawer from '@/components/uni-drawer/uni-drawer.vue'
 	import Card from '@/components/common/card/card.vue'
 	import Params from '@/components/common/params/params.vue'
-	import Price from '@/components/common/price/price.vue'
+	// import Price from '@/components/common/price/price.vue'
 	import List from '@/components/search/list/list.vue'
 	export default {
 		data() {
@@ -70,24 +67,33 @@
 				// 抽屉数据
 				drawerShow: false,
 				// 分类数据
-				service: {
-					type: 'service',
-					selectedIndex: 0,
-					list: [
-						{name: '促销'},
-						{name: '分期'},
-						{name: '仅看有货'}
-					],
-				},
-				classify: {
-					type: 'classify',
-					selectedIndex: 0,
-					list: [
-						{name: '耳机'},
-						{name: '户外'},
-						{name: '配件'}
-					]
-				},
+				// 产品规格参数
+				productPrams: [
+					{
+						label: '颜色',
+						params: [
+							{name: '火焰红',active: true},
+							{name: '炭黑',active: false},
+							{name: '冰蓝川',active: false},
+						]
+					},
+					{
+						label: '容量',
+						params: [
+							{name: '64GB',active: true},
+							{name: '128GB',active: false},
+							{name: '256GB',active: false},
+						]
+					},
+					{
+						label: '套餐',
+						params: [
+							{name: '标配',active: true},
+							{name: '套餐一',active: false},
+							{name: '套餐二',active: false},
+						]
+					}
+				],
 				// 搜索列表数据
 				productList: [
 					{
@@ -131,8 +137,8 @@
 			uniDrawer,
 			Card,
 			Params,
-			Price,
 			List
+			// Price
 		},
 		methods: {
 			// tab切换
@@ -150,15 +156,13 @@
 			},
 			// 监听选择侧滑栏的商品属性
 			changeIndex(payload) {
-				let type = payload.type;
-				if(type == 'service') {
-					this.service.selectedIndex = payload.index
+				let index1 = payload.index1;
+				let index = payload.index;
+				for(let i = 0;i < this.productPrams[index1].params.length;i++) {
+					this.productPrams[index1].params[i].active = false
 				}
-				else if(type == 'classify') {
-					this.classify.selectedIndex = payload.index
-				}
-				
-			}
+				this.productPrams[index1].params[index].active = true
+			},
 		}
 	}
 </script>

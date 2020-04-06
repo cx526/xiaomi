@@ -130,6 +130,32 @@
 									}
 								}
         }
+        ,{
+            "path" : "pages/goods-detail/goods-detail",
+            "style" : {
+							"navigationBarTitleText":"商品详情",
+							"app-plus": {
+								"bounce":"none",
+								"scrollIndicator":"none",
+								"titleNView":{
+									"type":"transparent",
+									"buttons":[
+										{
+											"type": "menu"
+										}
+									]
+								}
+							}
+						}
+        }
+        
+       
+        ,{
+            "path" : "pages/more-appraise/more-appraise",
+            "style" : {
+							"navigationBarTitleText":"全部评论"
+						}
+        }
     ],
 	"tabBar": {
 		"color":"#B9B9B9",

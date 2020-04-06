@@ -1,0 +1,1 @@
+<view><view class="goods-info"><view class="title">{{goodsInfo.title}}</view><view class="des">{{goodsInfo.des}}</view><price vue-id="1" price="{{goodsInfo.price}}" weight="700" bind:__l="__l"></price></view></view>

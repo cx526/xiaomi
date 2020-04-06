@@ -178,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _line = _interopRequireDefault(__webpack_require__(/*! @/components/common/line/line.vue */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var SwiperC = function SwiperC() {return __webpack_require__.e(/*! import() | components/common/swiper/swiper */ "components/common/swiper/swiper").then(__webpack_require__.bind(null, /*! @/components/common/swiper/swiper.vue */ 49));};var Nav = function Nav() {return __webpack_require__.e(/*! import() | components/common/nav/nav */ "components/common/nav/nav").then(__webpack_require__.bind(null, /*! @/components/common/nav/nav.vue */ 56));};var threeAdv = function threeAdv() {return __webpack_require__.e(/*! import() | components/index/three-adv/three-adv */ "components/index/three-adv/three-adv").then(__webpack_require__.bind(null, /*! @/components/index/three-adv/three-adv.vue */ 63));};var Card = function Card() {return __webpack_require__.e(/*! import() | components/common/card/card */ "components/common/card/card").then(__webpack_require__.bind(null, /*! @/components/common/card/card.vue */ 70));};var List = function List() {return __webpack_require__.e(/*! import() | components/common/list/list */ "components/common/list/list").then(__webpack_require__.bind(null, /*! @/components/common/list/list.vue */ 77));};var _default =
+var _line = _interopRequireDefault(__webpack_require__(/*! @/components/common/line/line.vue */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var SwiperC = function SwiperC() {return __webpack_require__.e(/*! import() | components/common/swiper/swiper */ "components/common/swiper/swiper").then(__webpack_require__.bind(null, /*! @/components/common/swiper/swiper.vue */ 73));};var Nav = function Nav() {return __webpack_require__.e(/*! import() | components/common/nav/nav */ "components/common/nav/nav").then(__webpack_require__.bind(null, /*! @/components/common/nav/nav.vue */ 80));};var threeAdv = function threeAdv() {return __webpack_require__.e(/*! import() | components/index/three-adv/three-adv */ "components/index/three-adv/three-adv").then(__webpack_require__.bind(null, /*! @/components/index/three-adv/three-adv.vue */ 87));};var Card = function Card() {return __webpack_require__.e(/*! import() | components/common/card/card */ "components/common/card/card").then(__webpack_require__.bind(null, /*! @/components/common/card/card.vue */ 94));};var List = function List() {return __webpack_require__.e(/*! import() | components/common/list/list */ "components/common/list/list").then(__webpack_require__.bind(null, /*! @/components/common/list/list.vue */ 101));};var _default =
 
 
 
@@ -444,7 +444,7 @@ var _line = _interopRequireDefault(__webpack_require__(/*! @/components/common/l
   components: {
     SwiperC: SwiperC,
     Nav: Nav,
-    Line: _line.default,
+    cutLine: _line.default,
     threeAdv: threeAdv,
     Card: Card,
     List: List },
@@ -455,6 +455,11 @@ var _line = _interopRequireDefault(__webpack_require__(/*! @/components/common/l
       success: function success(res) {
         _this.screenH = res.windowHeight - uni.upx2px(90) + 'px';
       } });
+
+  },
+  onNavigationBarSearchInputClicked: function onNavigationBarSearchInputClicked() {
+    uni.navigateTo({
+      url: '/pages/search/search' });
 
   },
   methods: {

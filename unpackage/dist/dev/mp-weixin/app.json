@@ -4,7 +4,10 @@
     "pages/class/class",
     "pages/my/my",
     "pages/cart/cart",
-    "components/common/line/line"
+    "components/common/line/line",
+    "pages/search/search",
+    "components/search/result/result",
+    "pages/goods-detail/goods-detail"
   ],
   "subPackages": [],
   "window": {

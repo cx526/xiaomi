@@ -2,7 +2,7 @@
 	<view>
 		<view class="product-box">
 			<view class="product">
-				<view class="prodct-left">
+				<view class="prodct-left" @click="goGoodsDeatil">
 					<image :src="threeAdv.big.src" mode=""></image>
 				</view>
 				<view class="product-right">
@@ -29,6 +29,14 @@
 			return {
 				
 			};
+		},
+		methods:{
+			goGoodsDeatil() {
+				console.log(111);
+				uni.navigateTo({
+					url: '/pages/goods-detail/goods-detail'
+				})
+			}
 		}
 	}
 </script>

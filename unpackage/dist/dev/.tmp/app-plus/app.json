@@ -6,7 +6,9 @@
     "pages/cart/cart",
     "components/common/line/line",
     "pages/search/search",
-    "components/search/result/result"
+    "components/search/result/result",
+    "pages/goods-detail/goods-detail",
+    "pages/more-appraise/more-appraise"
   ],
   "window": {
     "navigationBarTextStyle": "black",

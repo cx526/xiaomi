@@ -1,0 +1,1 @@
+<view><view class="prop-box"><view hidden="{{!(markShow)}}" class="mark animated fadeIn"></view><view data-event-opts="{{[['tap',[['close',['$event']]]]]}}" hidden="{{!(markShow)}}" class="body animated fadeInUp" catchtap="__e"><text>内容</text></view></view></view>

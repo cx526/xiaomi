@@ -150,7 +150,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 48:
+/***/ 50:
 /*!*****************************************************************************************************!*\
   !*** C:/Users/lichencai/Desktop/xiaomi/xiaomi/main.js?{"page":"components%2Fcommon%2Fline%2Fline"} ***!
   \*****************************************************************************************************/
@@ -167,5 +167,5 @@ createPage(_line.default);
 
 /***/ })
 
-},[[48,"common/runtime","common/vendor"]]]);
+},[[50,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/components/common/line/line.js.map
