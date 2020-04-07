@@ -21,3 +21,14 @@
 	### 14.小程序组件读取全局变量如vuex,或者挂载在main.js上的全局变量时，需要先赋值给组件里的data再使用
 	### 15.富文本的解析可以借助官方组件uParse
 	### 16.监听页面原生导航栏返回按钮点击事件 onBackPress() {return true}(表示不返回)
+	### 17.所有涉及路由的组件需要放在page文件夹下
+	### 18.vuex中的取值:
+	### 1.impore { mapState,mapGetters,mapMutations,mapActions } from 'vuex'
+	### 2.computed: {
+	###	...mapState({ name: state => state.name })
+	### ...mapGetters(['定义的方法名A'],['定义的方法名B'])
+	### 注:调用state.getters中的方法时可以传参,通过类似getParams:state => '调用传递过来的					 参数' => return ...
+	### ...mapMutations({ '调用定义的方法名A' })
+	### ...mapActions({ '调用定义的方法名A' })
+	### }
+	### 3.模块化(涉及到getters,mutations,actions的调用时跟没有用模块化开发一样的调用方法,需放置各个模快命名相同);通过modules:{'模快名'}导出

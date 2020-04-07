@@ -70,7 +70,13 @@
         }
         ,{
             "path" : "pages/cart/cart",
-            "style" : {}
+            "style" : {
+							"app-plus":{
+								"titleNView":false,
+								"scrollIndicator":"none",
+								"bounce":"none"
+							}
+						}
         }
         ,{
             "path" : "components/common/line/line",

@@ -161,6 +161,7 @@
 	import Price from '@/components/common/price/price'
 	import Params from '@/components/common/params/params'
 	import uniNumberBox from '@/components/uni-number-box/uni-number-box'
+	import {mapState} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -329,10 +330,17 @@
 			uniNumberBox
 		},
 		onLoad() {
+			
+			console.log(this.name)
 			uni.getSystemInfo({
 				success: res => {
 					this.statusHeight = res.statusBarHeight + 'px'
 				}
+			})
+		},
+		computed:{
+			...mapState({
+				name: state => state.name
 			})
 		},
 		methods: {
