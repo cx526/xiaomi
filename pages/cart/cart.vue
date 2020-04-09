@@ -1,8 +1,8 @@
 <template>
-	<view>
+	<view style="position: relative;">
 		<uni-nav-bar title="购物车" :rightText="isedit?'编辑':'完成'" statusBar :shadow="false" @click-right = "isedit = !isedit"></uni-nav-bar>
 		<!-- 购物车为空 -->
-		<view class="empty-cart">
+		<view class="empty-cart" v-if="!cartList.length < 0">
 			<view class="empty">
 				<text class="icon iconfont icon-gouwuche"></text>
 				<text style="margin: 0 20rpx;color: #ACACAC;">购物车还是空的</text>
@@ -11,22 +11,49 @@
 		</view>
 		<!-- 购物车不为空 -->
 		<view class="cart-box">
-				<view class="cart">
+			<block v-for="(item,index) in cartList" :key="index">
+				<view class="cart" style="margin-bottom: 28rpx;">
 					<label class="radio">
-						<radio color="#F7842B"/><text></text>
+						<radio color="#F7842B" :value="item.id" :checked="item.checked"/>
 					</label>
-					<image src="/static/images/demo/cate_01.png"></image>
+					<image :src="item.topic"></image>
 					<view class="main">
-						<text style="font-size: 28rpx;color: #444;">商品标题</text>
-						<text style="font-size: 26rpx;color: #C4C6C9;margin-top: 16rpx;">火焰红 64G 标配</text>
+						<text style="font-size: 28rpx;color: #444;">{{item.title}}</text>
+						<!-- 属性选择 -->
+						<view style="display: flex;">
+							<block v-for="(attr,attrIndex) in item.attr" :key="attrIndex">
+								<text 
+								style="font-size: 26rpx;color: #C4C6C9;margin-top: 16rpx;margin-left: 8rpx;">
+								{{ attr.list[attr.selected].name }}
+								</text>
+							</block>
+						</view>
 						<view class="total">
-							<view><Price price="3999"></Price></view>
+							<view><Price :price="item.price"></Price></view>
 							<view>	
-								<uniNumberBox :min="1"></uniNumberBox>
+								<uniNumberBox :min="item.min" :max="item.max"
+								@change="change($event,index)"></uniNumberBox>
 							</view>
 						</view>
 					</view>
 				</view>
+			</block>
+		</view>
+		<!-- 合计 -->
+		<view class="add-box">
+			<view>
+				<label class="radio" style="padding-left: 40rpx;">
+					<radio color="#F7842B"  :checked="checkAll"
+					@click="handleCheckedAll"/>
+				</label>
+				<view class="add">
+					<text>合计：</text>
+					<Price price="3999"></Price>
+				</view>
+				<view class="btn">
+					<button type="primary" style="background: #F7842B;">结算</button>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -35,10 +62,14 @@
 	import uniNavBar from '@/components/uni-nav-bar/uni-nav-bar.vue'
 	import uniNumberBox from '@/components/uni-number-box/uni-number-box'
 	import Price from '@/components/common/price/price'
+	import { mapState,mapMutations } from 'vuex'
 	export default {
 		data() {
 			return {
-				isedit: true
+				// 编辑完成状态切换
+				isedit: true,
+				// 控制全选全不选
+				checkAll: false,
 			};
 		},
 		components:{
@@ -46,11 +77,26 @@
 			uniNumberBox,
 			Price
 		},
-		// 监听全局时需要先加载一次页面
+		computed: {
+			...mapState({
+				cartList: state => state.cart.cartList
+			}),
+			
+		},
 		onLoad() {
-			uni.$on('index',data => {
-				this.title = data
-			})
+			
+		},
+		methods: {
+			// 增加数量
+			change(event,index) {
+				this.cartList[index].min = index
+			},
+			...mapMutations(['checkedAll']),
+			// 全选/全不选
+			handleCheckedAll() {
+				this.checkAll = !this.checkAll;
+				this.checkedAll({checked: this.checkAll})
+			}
 		}
 	}
 </script>
@@ -131,4 +177,92 @@
 			}
 		}
 	}
+	// 合计
+	/*  #ifndef  H5  */
+	.add-box {
+		box-sizing: border-box;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 100rpx;
+		background: #fff;
+		border-top: 1px solid #f1f1f1;
+		view {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			box-sizing: border-box;
+			// padding-left: 40rpx;
+			label {
+				width: 66rpx;
+			}
+			.add {
+				display: flex;
+				align-items: center;
+				flex: 1;
+				font-size: 28rpx;
+				text-align: center;
+			}
+			.btn {
+				width: 300rpx;
+				button {
+					width: 100%;
+					height: 100%;
+					font-size: 28rpx;
+					line-height: 100rpx;
+				}
+			}
+		}
+	}
+	/*  #endif   */ 
+	/*  #ifdef  H5  */
+	.add-box {
+		box-sizing: border-box;
+		position: fixed;
+		left: 0;
+		bottom: 100rpx;
+		right: 0;
+		width: 100%;
+		height: 100rpx;
+		background: #fff;
+		border-top: 1px solid #f1f1f1;
+		view {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			box-sizing: border-box;
+			// padding-left: 40rpx;
+			label {
+				width: 66rpx;
+			}
+			.add {
+				display: flex;
+				align-items: center;
+				flex: 1;
+				font-size: 28rpx;
+				text-align: center;
+				text {
+					display: inline-block;
+					width: 120rpx;
+				}
+			}
+			.btn {
+				width: 300rpx;
+				button {
+					width: 100%;
+					height: 100%;
+					font-size: 28rpx;
+					line-height: 100rpx;
+				}
+			}
+		}
+	}
+	// .add-box uni-view[data-v-647ca051] {
+	// 	width: 100% !important;
+	// }
+	/*  #endif   */
 </style>
