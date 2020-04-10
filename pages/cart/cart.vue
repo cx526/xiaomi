@@ -2,7 +2,7 @@
 	<view style="position: relative;">
 		<uni-nav-bar title="购物车" :rightText="isedit?'编辑':'完成'" statusBar :shadow="false" @click-right = "isedit = !isedit"></uni-nav-bar>
 		<!-- 购物车为空 -->
-		<view class="empty-cart" v-if="!cartList.length < 0">
+		<view class="empty-cart" v-if="cartList.length <= 0">
 			<view class="empty">
 				<text class="icon iconfont icon-gouwuche"></text>
 				<text style="margin: 0 20rpx;color: #ACACAC;">购物车还是空的</text>
@@ -10,10 +10,10 @@
 			</view>
 		</view>
 		<!-- 购物车不为空 -->
-		<view class="cart-box">
+		<view class="cart-box" v-else>
 			<block v-for="(item,index) in cartList" :key="index">
 				<view class="cart" style="margin-bottom: 28rpx;">
-					<label class="radio">
+					<label class="radio" @click="handleRadio(index)">
 						<radio color="#F7842B" :value="item.id" :checked="item.checked"/>
 					</label>
 					<image :src="item.topic"></image>
@@ -31,7 +31,7 @@
 						<view class="total">
 							<view><Price :price="item.price"></Price></view>
 							<view>	
-								<uniNumberBox :min="item.min" :max="item.max"
+								<uniNumberBox :min="1" :max="item.max"
 								@change="change($event,index)"></uniNumberBox>
 							</view>
 						</view>
@@ -43,12 +43,13 @@
 		<view class="add-box">
 			<view>
 				<label class="radio" style="padding-left: 40rpx;">
-					<radio color="#F7842B"  :checked="checkAll"
-					@click="handleCheckedAll"/>
+					<radio color="#F7842B"  :checked="len"
+					@click="handleCheckedAll"
+					:disabled="disabledSelctAll"/>
 				</label>
 				<view class="add">
-					<text>合计：</text>
-					<Price price="3999"></Price>
+					<text style="width: 200rpx;">合计：{{add}}</text>
+					<!-- <Price price="3999"></Price> -->
 				</view>
 				<view class="btn">
 					<button type="primary" style="background: #F7842B;">结算</button>
@@ -62,7 +63,7 @@
 	import uniNavBar from '@/components/uni-nav-bar/uni-nav-bar.vue'
 	import uniNumberBox from '@/components/uni-number-box/uni-number-box'
 	import Price from '@/components/common/price/price'
-	import { mapState,mapMutations } from 'vuex'
+	import { mapState,mapMutations,mapGetters } from 'vuex'
 	export default {
 		data() {
 			return {
@@ -81,6 +82,7 @@
 			...mapState({
 				cartList: state => state.cart.cartList
 			}),
+			...mapGetters(['add','len','disabledSelctAll'])
 			
 		},
 		onLoad() {
@@ -89,13 +91,18 @@
 		methods: {
 			// 增加数量
 			change(event,index) {
-				this.cartList[index].min = index
+				this.cartList[index].min = event;
+				
 			},
-			...mapMutations(['checkedAll']),
+			...mapMutations(['checkedAll','checked']),
 			// 全选/全不选
 			handleCheckedAll() {
 				this.checkAll = !this.checkAll;
 				this.checkedAll({checked: this.checkAll})
+			},
+			// 单选
+			handleRadio(index) {
+				this.checked({index: index});
 			}
 		}
 	}
